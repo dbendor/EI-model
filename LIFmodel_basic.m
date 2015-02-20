@@ -29,7 +29,7 @@ for f=1:length(freq_list)
     freq=freq_list(f);
     t=0:step:(kernel_time_constant*10);
     kernel=t.*exp(-t/kernel_time_constant);
-    kernel=1e-9*kernel/max(kernel); %amplitude of 3 nS
+    kernel=1e-9*kernel/max(kernel); %amplitude of 1 nS
     input=zeros(size(0:step:(POSTstimulus_duration+stimulus_duration)));
     stimulus_input_length=length(0:step:(stimulus_duration));
     ipi=round(1/(freq*step)); %ipi=interpulse interval
