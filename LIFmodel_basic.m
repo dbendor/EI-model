@@ -29,7 +29,7 @@ for f=1:length(freq_list)
     freq=freq_list(f);
     t=0:step:(kernel_time_constant*10);
     kernel=t.*exp(-t/kernel_time_constant);
-    kernel=3e-9*kernel/max(kernel); %amplitude of 3 nS
+    kernel=1e-9*kernel/max(kernel); %amplitude of 3 nS
     input=zeros(size(0:step:(POSTstimulus_duration+stimulus_duration)));
     stimulus_input_length=length(0:step:(stimulus_duration));
     ipi=round(1/(freq*step)); %ipi=interpulse interval
@@ -56,8 +56,7 @@ for f=1:length(freq_list)
                 I_input((latency+i+jitter):(latency+i+jitter+length(kernel)-1))=I_input((latency+i+jitter):(latency+i+jitter+length(kernel)-1))+kernel;
             end
         end
-        E_input=E_input/10;
-        I_input=I_input/10;
+        
         delay=round(abs(IE_delay)/(1000*step));  %delay in steps
         if IE_delay>=0
             Ge=E_input*E_strength;
