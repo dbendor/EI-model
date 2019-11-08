@@ -1,6 +1,6 @@
 # Bendor-Lab
-shared code of Bendor Lab
+shared code of Bendor Lab related to EI model from Bendor, PLOS Computational Biology, 2015 
 
-LIFmodel_basic.m
+original code in LIFmodel_basic.m
 
-LIF model for Bendor, PLOS Computational Biology, 2015
+modified version of EI model including adaptation (Lee et al.) also included.
